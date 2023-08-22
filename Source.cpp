@@ -18,16 +18,15 @@ int Search1(int V[], int m, int x) {
     for (int i = 0; i < m; ++i)
     {
         avgCompar1++;
-        if (V[i] == x) 
+        if (V[i] == x)
         {
             return i; // Return the index
         }
         if (V[i] == 0)
         {
-            break;
+            return -1; // x not found
         }
     }
-    return -1; // x not found
 }
 
 // Second function - Search2 (O(logm))
