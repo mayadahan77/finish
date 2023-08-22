@@ -38,7 +38,7 @@ int Search2(int V[], int m, int x) {
         if (V[mid] == x) {
             return mid; // Return the index
         }
-        if (V[mid] < x) {
+        if (V[mid] < x && V[mid] != 0) {
             left = mid + 1;
         }
         else {
