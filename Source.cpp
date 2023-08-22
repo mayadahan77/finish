@@ -5,9 +5,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <vector>
 #include <random>
-#include <algorithm>
+
 
 using namespace std;
 
@@ -100,27 +99,28 @@ int main() {
 
         for (int i = 0; i < n; ++i)
         {
-            arr[i] = rand() + 1; // Random not zero
+            arr[i] = rand() + 1; // Random without zero
         }
 
-        for (int i = n; i < m; ++i)
+        for (int i = n; i < m; ++i) // Filling the rest of the array with the zero
         {
             arr[i] = 0;
         }
 
         for (int i = 0; i < n; i++)
         {
-            for (int j = 0; j < n; j++)
+            for (int j = i + 1; j < n; j++)
             {
-                if (arr[i] < arr[j])
+                if (arr[i] > arr[j])
                 {
                     swap(arr[i], arr[j]);
                 }
             }
         }
 
-        int x = rand() + 1; // Random not zero
+        int x = rand() + 1; // Random without zero
 
+        //Running the functions with all the conditions
         Search1(arr, m, x);
         Search2(arr, m, x);
         Search3(arr, m, x);
