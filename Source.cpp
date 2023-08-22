@@ -1,3 +1,7 @@
+
+//318878956 - MAYA DAHAN
+//312276215 - AVIV SOFER
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -5,8 +9,6 @@
 #include <random>
 #include <algorithm>
 
-//318878956 - MAYA DAHAN
-//312276215 - AVIV SOFER
 using namespace std;
 
 int avgCompar1 = 0, avgCompar2 = 0, avgCompar3 = 0;
