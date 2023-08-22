@@ -16,13 +16,18 @@ double avgCompar1 = 0, avgCompar2 = 0, avgCompar3 = 0;
 // First function - Search1 (O(n))
 int Search1(int V[], int m, int x) {
     for (int i = 0; i < m; ++i)
-    {            
+    {
         avgCompar1++;
-        if (V[i] == x) {
+        if (V[i] == x) 
+        {
             return i; // Return the index
         }
+        if (V[i] == 0)
+        {
+            break;
+        }
     }
-    return -1; // x Not found
+    return -1; // x not found
 }
 
 // Second function - Search2 (O(logm))
@@ -42,17 +47,20 @@ int Search2(int V[], int m, int x) {
             right = mid - 1;
         }
     }
-    return -1; // x Not found
+    return -1; // x not found
 }
 
 // A third function - Search3 (O(logn))
 int Search3(int V[], int m, int x) {
+
+    // search the first zero
     int firstZero = 1;
     while (firstZero < m && V[firstZero] < x && V[firstZero] != 0)
     {
         firstZero *= 2;
     }
 
+    // find x in range
     int left = 0, right = firstZero - 1;
     while (left <= right)
     {
@@ -68,7 +76,7 @@ int Search3(int V[], int m, int x) {
             right = mid - 1;
         }
     }
-    return -1; // x Not found
+    return -1; // x not found
 }
 
 void swap(int* a, int* b)
@@ -93,7 +101,7 @@ int main() {
 
         for (int i = 0; i < n; ++i)
         {
-            arr[i] = rand() + 1;
+            arr[i] = rand() + 1; // Random not zero
         }
 
         for (int i = n; i < m; ++i)
@@ -105,14 +113,14 @@ int main() {
         {
             for (int j = 0; j < n; j++)
             {
-                if (arr[i] < arr[j] && arr[j] != 0)
+                if (arr[i] < arr[j])
                 {
                     swap(arr[i], arr[j]);
                 }
             }
         }
 
-        int x = rand() + 1;
+        int x = rand() + 1; // Random not zero
 
         Search1(arr, m, x);
         Search2(arr, m, x);
