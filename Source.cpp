@@ -6,7 +6,7 @@
 #include <algorithm>
 
 //318878956 - MAYA DAHAN
-// - AVIV SOFER
+//312276215 - AVIV SOFER
 using namespace std;
 
 int avgCompar1 = 0, avgCompar2 = 0, avgCompar3 = 0;
