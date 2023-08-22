@@ -11,7 +11,7 @@
 
 using namespace std;
 
-int avgCompar1 = 0, avgCompar2 = 0, avgCompar3 = 0;
+double avgCompar1 = 0, avgCompar2 = 0, avgCompar3 = 0;
 
 // First function - Search1 (O(n))
 int Search1(int V[], int m, int x) {
@@ -93,7 +93,7 @@ int main() {
 
         for (int i = 0; i < n; ++i)
         {
-            arr[i] = rand();
+            arr[i] = rand() + 1;
         }
 
         for (int i = n; i < m; ++i)
@@ -101,18 +101,18 @@ int main() {
             arr[i] = 0;
         }
 
-        for (int j = 0; j < n; j++)
+        for (int i = 0; i < n; i++)
         {
-            for (int k = 0; k < n; k++)
+            for (int j = 0; j < n; j++)
             {
-                if (arr[j] < arr[k] && arr[k] != 0)
+                if (arr[i] < arr[j] && arr[j] != 0)
                 {
-                    swap(arr[j], arr[k]);
+                    swap(arr[i], arr[j]);
                 }
             }
         }
 
-        int x = rand();
+        int x = rand() + 1;
 
         Search1(arr, m, x);
         Search2(arr, m, x);
